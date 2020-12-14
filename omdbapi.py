@@ -8,30 +8,24 @@ Created on Sat Nov 28 12:25:07 2020
 import json
 import requests
 import urllib
-import os
-os.chdir('C:\\Users\\lakna\\OneDrive\\Desktop\\Early-Birds-MovieScraping')
+#import os
+#os.chdir('C:\\Users\\lakna\\OneDrive\\Desktop\\Early-Birds-MovieScraping')
 #Change the path to the directory you want posters to be saved to
-
+from DB import getid 
 
 #User input function
 # The user input function has to return
 
 
 def plot_prompt():
-    u_selection=input("Do you want to know movie plot [Y/N] :")
-    if u_selection=='Y':
-        ID=getid()      # If the user enters Y. I will call the getid 
-        movie_plot(ID)  # function which returns an imbd ID and store it in the ID variable
-    else:               # then my movie_plot function will use that ID to return the plot
-        pass # else we need this to return to the menu options
+    ID=getid()[0]     # If the user enters Y. I will call the getid 
+    movie_plot(ID)  #function which returns an imbd ID and store it in the ID variable
+                 # then my movie_plot function will use that ID to return the plot
+      # else we need this to return to the menu options
             
 def poster_prompt():
-    u_selection=input("Do you want a image of the movie poster [Y/N] :")
-    if u_selection=='Y':
-        ID=getid()      # If the user enters Y. I will call the getid 
-        movie_poster(ID)  # function which returns an imbd ID and store it in the ID variable
-    else:               # then my movie_poster function will use that ID to return the movie poster
-        pass # else we need this to return to the menu options
+    ID=getid()[0]     # If the user enters Y. I will call the getid 
+    movie_poster(ID)
     
 
 def movie_plot(ID):
@@ -61,4 +55,7 @@ def movie_poster(ID):
     
 movie_plot('tt0386676')  # This is just a test id to check if the Id is working
    
-movie_plot('tt4955642')
+#movie_plot('tt4955642')
+
+poster_prompt()
+
