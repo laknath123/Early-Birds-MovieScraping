@@ -124,11 +124,11 @@ def getListByGenre():
     cursor.execute(query2) #run the created query 
     rows=cursor.fetchall() #fetch rows
     for x in rows: #print formatted results
-        print('Title: '+ x[0][:-6])
-        print('Year: ' + x[0][-5:-1])
-        print('Average User Rating: '+ str(x[2]) + "/5 Stars")
-        print('Genre Tags: '+ x[1])
-
+        print('{}: {:50}'.format('Title', x[0][:-6]))
+        print('{}: {:50}'.format('Year', x[0][-5:-1]))
+        print('{}: {:50}'.format('Average User Rating', str(x[2]) + "/5 Stars"))
+        print('{}: {:50}'.format('Genre Tags', str(x[1])))
+        print('-'*56)
 
 
 
@@ -201,11 +201,11 @@ def getListByRating():
     rows=cursor.fetchall() #fetch rows
     rand_selections=random.sample(range(0,len(rows)), number) # generate the number of specified random numbers to randomly pick x number of movies of that genre
     for x in rand_selections: #print formatted results
-        print('Title: '+ rows[x][0][:-6])
-        print('Year: ' + rows[x][0][-5:-1])
-        print('Average User Rating: '+ str(rows[x][2]) + "/5 Stars")
-        print('Genre Tags: '+ rows[x][1])
-
+        print('{}: {:50}'.format('Title', rows[x][0][:-6]))
+        print('{}: {:50}'.format('Year', rows[x][0][-5:-1]))
+        print('{}: {:50}'.format('Average User Rating', str(rows[x][2]) + "/5 Stars"))
+        print('{}: {:50}'.format('Genre Tags', str(rows[x][1])))
+        print('-'*56)
 
 
 # In[234]:
