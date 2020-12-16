@@ -8,7 +8,7 @@ Created on Wed Dec  2 15:29:38 2020
 import requests
 from bs4 import BeautifulSoup
 import re
-from DB import getid
+from DBS import getid
 
 #replace the movieid with the input generated movieid
 
@@ -73,4 +73,3 @@ def Actors():
     search = dict(zip(actors,character))
     return search
 
-Actors()

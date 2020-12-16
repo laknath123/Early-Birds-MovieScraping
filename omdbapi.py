@@ -8,10 +8,7 @@ Created on Sat Nov 28 12:25:07 2020
 import json
 import requests
 import urllib
-#import os
-#os.chdir('C:\\Users\\lakna\\OneDrive\\Desktop\\Early-Birds-MovieScraping')
-#Change the path to the directory you want posters to be saved to
-from DB import getid 
+from DBS import getid 
 
 #User input function
 # The user input function has to return
@@ -52,10 +49,4 @@ def movie_poster(ID):
         "response failed"
         
         
-    
-movie_plot('tt0386676')  # This is just a test id to check if the Id is working
-   
-#movie_plot('tt4955642')
-
-poster_prompt()
 

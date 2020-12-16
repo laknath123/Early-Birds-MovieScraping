@@ -20,7 +20,7 @@ def read_df_create_sqldb(filename):
         else:    
             create_query+=db.columns[x]+ " VarCHAR2(20))"
         try: #create a database file based on filename, test connection
-            connection = sqlite3.connect("movies-main.sqlite") #connect to cursor create main movie database object
+            connection = sqlite3.connect("movies-main2.sqlite") #connect to cursor create main movie database object
             cursor=connection.cursor()
         except: 
             print("Database Connection Error")
@@ -78,9 +78,10 @@ def get_Avg_Movie_Rating():
     cursor.execute(query2) #execute the above query
     rows=cursor.fetchall() #fetch rows 
     for x in rows: #for each result print it in a formatted fashion
-        print('Title: '+ x[0][:-6])
-        print('Year: ' + x[0][-5:-1])
-        print('Average User Rating: '+ str(x[1]) + "/5 Stars")
+        print('{}: {:50}'.format('Title', x[0][:-6]))
+        print('{}: {:50}'.format('Year', x[0][-5:-1]))
+        print('{}: {:50}'.format('Average User Rating', str(x[1]) + "/5 Stars"))
+        print('-'*56)
         
 
 
