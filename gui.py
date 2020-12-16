@@ -11,8 +11,10 @@ e.pack()
 e.insert(0, "Enter a movie title: ")
 
 def myClick():
-	hello = "Hello " + e.get()
-	myLabel = Label(root, text=hello)
+	title_input = e.get()
+    # the getID function should take this as an input 
+    # do all the stuff and return what 
+	myLabel = Label(root, text=title_input)
 	e.delete(0, 'end')
 	myLabel.pack()
 
